@@ -11,13 +11,12 @@ function App() {
   const [selectedCustomer, setSelectedCustomer] = useState(null);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/customers').then(response => {
-      setCustomers(response.data);
+    axios.get('https://mohtady154.github.io/db.json/db.json').then(response => {
+      setCustomers(response.data.customers);
+      setTransactions(response.data.transactions);
+      console.log(response);
     });
 
-    axios.get('http://localhost:5000/transactions').then(response => {
-      setTransactions(response.data);
-    });
   }, []);
 
   const handleCustomerSelect = (customer) => {
