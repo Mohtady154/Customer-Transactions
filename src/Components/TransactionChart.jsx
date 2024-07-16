@@ -5,7 +5,7 @@ import { Chart, registerables } from 'chart.js';
 Chart.register(...registerables);
 
 function TransactionChart({ customer, transactions }) {
-  const customerTransactions = transactions.filter(transaction => transaction.customer_id === customer.id);
+  const customerTransactions = transactions.filter(transaction => transaction.customer_id == customer.id);
 
   const dates = customerTransactions.map(transaction => transaction.date);
   const amounts = customerTransactions.map(transaction => transaction.amount);

@@ -41,7 +41,7 @@ console.log(filteredCustomers);
         </thead>
         <tbody>
           {filteredCustomers.map(customer => {
-            const customerTransactions = transactions.filter(transaction => transaction.customer_id === customer.id);
+            const customerTransactions = transactions.filter(transaction => transaction.customer_id == customer.id);
             const totalAmount = customerTransactions.reduce((sum, transaction) => sum + transaction.amount, 0);
 
             return <>
